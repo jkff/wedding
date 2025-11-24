@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eugene and Liyou - Wedding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <style>
+        @font-face {
+            font-family: 'Circular';
+            src: url('https://sp-bootstrap.global.ssl.fastly.net/8.19.0/fonts/circular-book.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #fdfcfa;
+        }
+
+        /* Navigation */
+        nav {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            font-family: 'Circular', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #5a5a5a;
+            position: relative;
+            padding-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: #b8a398;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #b8a398;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #fdfcfa;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Cardo', serif;
+            font-size: 5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: #5a5a5a;
+            letter-spacing: 2px;
+        }
+
+        .ampersand {
+            font-size: 4rem;
+            color: #b8a398;
+            margin: 0 1rem;
+        }
+
+        /* Hero Image Section */
+        .hero-image {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 3rem;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Cardo', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #5a5a5a;
+        }
+
+        .divider {
+            width: 100px;
+            height: 1px;
+            background-color: #b8a398;
+            margin: 2rem auto;
+        }
+
+        /* Details Section */
+        .details {
+            background-color: #f9f6f3;
+        }
+
+        .details-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .details-content .date {
+            font-family: 'Cardo', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #b8a398;
+            margin-bottom: 1.5rem;
+        }
+
+        .details-content .location {
+            font-size: 1.3rem;
+            color: #5a5a5a;
+            margin-bottom: 1rem;
+        }
+
+        .details-content .address {
+            font-size: 1.1rem;
+            color: #7a7a7a;
+            line-height: 1.8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #b8a398;
+            color: #fff;
+            border: 2px solid #b8a398;
+        }
+
+        .btn-primary:hover {
+            background-color: #a89384;
+            border-color: #a89384;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #b8a398;
+            border: 2px solid #b8a398;
+        }
+
+        .btn-secondary:hover {
+            background-color: #b8a398;
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #5a5a5a;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .ampersand {
+                font-size: 2.5rem;
+            }
+
+            .hero-date {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>
+                Eugene
+                <span class="ampersand">&</span>
+                Liyou
+            </h1>
+            <div class="divider"></div>
+            <!-- Navigation -->
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="registry">Registry</a></li>
+                    <li><a href="https://partiful.com/e/STBzHo2emMkPA4tKgRW2" target="_blank">RSVP</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Home Page Content -->
+    <div id="home-page" class="page-content">
+        <!-- Hero Image Section -->
+        <section class="hero-image">
+            <img src="header.jpeg" alt="Eugene and Liyou">
+        </section>
+
+        <!-- Wedding Details Section -->
+        <section class="section details">
+            <h2 class="section-title">Wedding Details</h2>
+            <div class="divider"></div>
+            <div class="details-content">
+                <p class="date">July 18, 2026</p>
+                <p class="location">The Brazilian Room</p>
+                <p class="address">
+                    Tilden Regional Park<br>
+                    Berkeley, California
+                </p>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section cta-section">
+            <h2 class="section-title">Join Us</h2>
+            <div class="divider"></div>
+            <div class="cta-buttons">
+                <a href="https://partiful.com/e/STBzHo2emMkPA4tKgRW2" class="btn btn-primary" target="_blank">RSVP</a>
+                <a href="#" class="btn btn-secondary nav-link" data-page="registry">Registry</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Registry Page Content -->
+    <div id="registry-page" class="page-content" style="display: none;">
+        <section class="section">
+            <h2 class="section-title">Registry</h2>
+            <div class="divider"></div>
+            <p style="text-align: center; font-size: 1.2rem; color: #7a7a7a; max-width: 600px; margin: 0 auto;">
+                We have not uploaded our registry yet, please stay tuned!
+            </p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Eugene and Liyou</p>
+    </footer>
+
+    <script>
+        // Single-page app navigation
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const page = this.getAttribute('data-page');
+
+                // Hide all pages
+                document.querySelectorAll('.page-content').forEach(p => {
+                    p.style.display = 'none';
+                });
+
+                // Show selected page
+                document.getElementById(page + '-page').style.display = 'block';
+
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
